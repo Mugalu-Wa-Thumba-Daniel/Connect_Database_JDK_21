@@ -8,7 +8,7 @@ public class TestDatabaseConnection {
     public static void main(String[] args) {
         String dbUrl = "jdbc:mysql://localhost:3306/EmployeeDB";
         String user = "root";
-        String password = "######";
+        String password = "@Danne2024";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
