@@ -1,6 +1,11 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromiumDriverManager;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,9 +17,11 @@ class TestDatabaseConnectionTest {
 
     @Test
     void testMain() {
+        WebDriverManager.chromedriver().setup();
         String dbUrl = "jdbc:mysql://localhost:3306/EmployeeDB";
         String user = "root";
         String password = "######";
+
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -30,4 +37,5 @@ class TestDatabaseConnectionTest {
             fail("Connection failed: " + e.getMessage());
         }
     }
+
 }
